@@ -1,0 +1,16 @@
+scalar Date
+
+type Query {
+  userType(id: ID!): UserType
+  userTypeList: [UserType]
+}
+
+type UserType {
+  id: ID!
+  description: String
+  createdAt: Date
+  updatedAt: Date
+  isActive: Boolean
+  isExcluded: Boolean
+  teste: Boolean
+}

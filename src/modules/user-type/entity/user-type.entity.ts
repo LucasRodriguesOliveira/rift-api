@@ -1,4 +1,4 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 @Schema()
@@ -6,16 +6,16 @@ export class UserType {
   @Prop()
   description: string;
 
-  @Prop()
+  @Prop({ default: new Date() })
   createdAt: Date;
 
-  @Prop()
+  @Prop({ default: new Date() })
   updatedAt: Date;
 
-  @Prop()
+  @Prop({ default: true })
   isActive: boolean;
 
-  @Prop()
+  @Prop({ default: false })
   isExcluded: boolean;
 }
 

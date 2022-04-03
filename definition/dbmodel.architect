@@ -112,13 +112,13 @@
     <column id="COL29" populated="true" UUID="31ce8b8b-c3d9-4019-9171-d43e2de66d83" autoIncrement="false" autoIncrementSequenceName="PermissionGroup_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="100" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL30" populated="true" UUID="eac8c84f-fa10-452f-ad2b-7a327fb78d07" autoIncrement="false" autoIncrementSequenceName="PermissionGroup_typeId_seq" defaultValue="" name="typeId" nullable="0" physicalName="typeId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL30" populated="true" UUID="eac8c84f-fa10-452f-ad2b-7a327fb78d07" autoIncrement="false" autoIncrementSequenceName="PermissionGroup_typeId_seq" defaultValue="" name="typeId" nullable="0" physicalName="typeId" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL31" populated="true" UUID="96e941b0-da76-488c-ab36-6541ef4afd59" autoIncrement="false" autoIncrementSequenceName="PermissionGroup_permissionId_seq" defaultValue="" name="permissionId" nullable="0" physicalName="permissionId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL31" populated="true" UUID="96e941b0-da76-488c-ab36-6541ef4afd59" autoIncrement="false" autoIncrementSequenceName="PermissionGroup_permissionId_seq" defaultValue="" name="permissionId" nullable="0" physicalName="permissionId" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL32" populated="true" UUID="5f244ef4-1957-451f-b74a-560351f781b3" autoIncrement="false" autoIncrementSequenceName="PermissionGroup_moduleId_seq" defaultValue="" name="moduleId" nullable="0" physicalName="moduleId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL32" populated="true" UUID="5f244ef4-1957-451f-b74a-560351f781b3" autoIncrement="false" autoIncrementSequenceName="PermissionGroup_moduleId_seq" defaultValue="" name="moduleId" nullable="0" physicalName="moduleId" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL33" populated="true" UUID="1f7d11c2-f836-4e53-a76b-79476161c260" autoIncrement="false" autoIncrementSequenceName="Module_createdAt_seq" defaultValue="" name="createdAt" nullable="0" physicalName="createdAt" precision="0" referenceCount="1" scale="0" source-column-ref="COL13" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
@@ -185,10 +185,10 @@
     <column id="COL50" populated="true" UUID="fe18d581-8289-48ad-a320-e291ff20601f" autoIncrement="false" autoIncrementSequenceName="UserToken_expiresAt_seq" defaultValue="" name="expiresAt" nullable="1" physicalName="expiresAt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
      <remarks></remarks>
     </column>
-    <column id="COL51" populated="true" UUID="9569dbfb-7bf0-4f7e-bad1-2f2e462c8d37" autoIncrement="false" autoIncrementSequenceName="UserToken_userId_seq" defaultValue="" name="userId" nullable="0" physicalName="userId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL51" populated="true" UUID="9569dbfb-7bf0-4f7e-bad1-2f2e462c8d37" autoIncrement="false" autoIncrementSequenceName="UserToken_userId_seq" defaultValue="" name="userId" nullable="0" physicalName="userId" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL52" populated="true" UUID="87918051-19c0-4d81-b1af-03467933285b" autoIncrement="false" autoIncrementSequenceName="UserToken_tokenTypeId_seq" defaultValue="" name="tokenTypeId" nullable="0" physicalName="tokenTypeId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL52" populated="true" UUID="87918051-19c0-4d81-b1af-03467933285b" autoIncrement="false" autoIncrementSequenceName="UserToken_tokenTypeId_seq" defaultValue="" name="tokenTypeId" nullable="0" physicalName="tokenTypeId" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -237,7 +237,7 @@
     <column id="COL64" populated="true" UUID="11b1e31f-8476-4202-aadc-68be8207a68b" autoIncrement="false" autoIncrementSequenceName="Post_content_seq" defaultValue="" name="content" nullable="0" physicalName="content" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL65" populated="true" UUID="aabd16a5-231e-414a-85b9-b070999e48f8" autoIncrement="false" autoIncrementSequenceName="Post_author_seq" defaultValue="" name="author" nullable="0" physicalName="author" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL65" populated="true" UUID="aabd16a5-231e-414a-85b9-b070999e48f8" autoIncrement="false" autoIncrementSequenceName="Post_author_seq" defaultValue="" name="author" nullable="0" physicalName="author" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL66" populated="true" UUID="4442f646-42ad-4fa2-97ba-a16c136c9103" autoIncrement="false" autoIncrementSequenceName="Post_publishedAt_seq" defaultValue="" name="publishedAt" nullable="1" physicalName="publishedAt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
@@ -272,10 +272,10 @@
     <column id="COL74" populated="true" UUID="e7317d08-77e9-4a13-8b55-1aee81f9c27d" autoIncrement="false" autoIncrementSequenceName="Comment_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="100" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL75" populated="true" UUID="9268ef38-a427-4ed9-90ff-6d4e82fb2222" autoIncrement="false" autoIncrementSequenceName="Comment_postId_seq" defaultValue="" name="postId" nullable="0" physicalName="postId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL75" populated="true" UUID="9268ef38-a427-4ed9-90ff-6d4e82fb2222" autoIncrement="false" autoIncrementSequenceName="Comment_postId_seq" defaultValue="" name="postId" nullable="0" physicalName="postId" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL76" populated="true" UUID="4f455694-1c63-4b52-8aaf-dd9e6e8a0ac5" autoIncrement="false" autoIncrementSequenceName="Comment_author_seq" defaultValue="" name="author" nullable="0" physicalName="author" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL76" populated="true" UUID="4f455694-1c63-4b52-8aaf-dd9e6e8a0ac5" autoIncrement="false" autoIncrementSequenceName="Comment_author_seq" defaultValue="" name="author" nullable="0" physicalName="author" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL77" populated="true" UUID="f5f0ef69-dd98-466e-bc5e-57da03534bb9" autoIncrement="false" autoIncrementSequenceName="Comment_content_seq" defaultValue="" name="content" nullable="0" physicalName="content" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -310,10 +310,10 @@
     <column id="COL85" populated="true" UUID="e2181cef-bc74-472b-9a44-9848ae19851c" autoIncrement="false" autoIncrementSequenceName="Revision_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="100" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL86" populated="true" UUID="6bc5a231-43f6-4660-a7b4-f3c9a04e192d" autoIncrement="false" autoIncrementSequenceName="Revision_revisedBy_seq" defaultValue="" name="revisedBy" nullable="0" physicalName="revisedBy" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL86" populated="true" UUID="6bc5a231-43f6-4660-a7b4-f3c9a04e192d" autoIncrement="false" autoIncrementSequenceName="Revision_revisedBy_seq" defaultValue="" name="revisedBy" nullable="0" physicalName="revisedBy" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL87" populated="true" UUID="49b35285-2ecd-495d-a1b7-a7601a88869b" autoIncrement="false" autoIncrementSequenceName="Revision_stateId_seq" defaultValue="" name="stateId" nullable="0" physicalName="stateId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL87" populated="true" UUID="49b35285-2ecd-495d-a1b7-a7601a88869b" autoIncrement="false" autoIncrementSequenceName="Revision_stateId_seq" defaultValue="" name="stateId" nullable="0" physicalName="stateId" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL88" populated="true" UUID="6d17a903-5453-44ce-b8be-38c98240e30f" autoIncrement="false" autoIncrementSequenceName="Revision_postId_seq" defaultValue="" name="postId" nullable="0" physicalName="postId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -413,7 +413,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
