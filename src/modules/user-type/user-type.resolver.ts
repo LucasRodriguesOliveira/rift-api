@@ -1,4 +1,4 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { UserType } from './entity/user-type.entity';
 import { UserTypeService } from './user-type.service';
 
@@ -14,5 +14,31 @@ export class UserTypeResolver {
   @Query('userTypeList')
   async getUserTypeList(): Promise<UserType[]> {
     return this.userTypeService.list();
+  }
+
+  @Mutation('registerUserType')
+  async create(@Args('description') description: string): Promise<UserType> {
+    return this.userTypeService.create(description);
+  }
+
+  @Mutation('updateUserTypeDescription')
+  async updateDescription(
+    @Args('id') id: string,
+    @Args('description') description: string,
+  ): Promise<UserType> {
+    return this.userTypeService.updateDescription(id, description);
+  }
+
+  @Mutation('updateUserTypeIsActive')
+  async updateIsActive(
+    @Args('id') id: string,
+    @Args('isActive') isActive: boolean,
+  ): Promise<UserType> {
+    return this.userTypeService.updateIsActive(id, isActive);
+  }
+
+  @Mutation('removeUserType')
+  async delete(@Args('id') id: string): Promise<boolean> {
+    return this.userTypeService.delete(id);
   }
 }

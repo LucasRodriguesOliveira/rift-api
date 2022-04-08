@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateUserTypeDto } from './dto/createUserType.dto';
 import { UserType, UserTypeDocument } from './entity/user-type.entity';
 
 @Injectable()
@@ -11,8 +10,8 @@ export class UserTypeService {
     private readonly userTypeModel: Model<UserTypeDocument>,
   ) {}
 
-  async create(createUserTypeDto: CreateUserTypeDto): Promise<UserType> {
-    const userType = new this.userTypeModel(createUserTypeDto);
+  async create(description: string): Promise<UserType> {
+    const userType = new this.userTypeModel({ description });
 
     return userType.save();
   }
@@ -23,5 +22,26 @@ export class UserTypeService {
 
   async list(): Promise<UserType[]> {
     return this.userTypeModel.find({});
+  }
+
+  async updateDescription(id: string, description: string): Promise<UserType> {
+    await this.userTypeModel.updateOne({ _id: id }, { $set: { description } });
+
+    return this.userTypeModel.findById(id);
+  }
+
+  async updateIsActive(id: string, isActive: boolean): Promise<UserType> {
+    await this.userTypeModel.updateOne({ _id: id }, { $set: { isActive } });
+
+    return this.userTypeModel.findById(id);
+  }
+
+  async delete(id: string): Promise<boolean> {
+    const { modifiedCount } = await this.userTypeModel.updateOne(
+      { _id: id },
+      { $set: { isExcluded: true } },
+    );
+
+    return !!modifiedCount;
   }
 }

@@ -8,7 +8,6 @@ export interface GraphQLConfig {
   debug: boolean;
   playground: boolean;
   typePaths: string[];
-  outputAs: string;
   definitions: GraphQlDefinitions;
 }
 
@@ -20,7 +19,6 @@ export const graphqlLoadEnv = (): { graphql: GraphQLConfig } => {
       debug: false,
       playground: NODE_ENV === 'development',
       typePaths: ['./**/*.graphql'],
-      outputAs: 'class',
       definitions: {
         path: join(process.cwd(), 'src/graphql.ts'),
       },

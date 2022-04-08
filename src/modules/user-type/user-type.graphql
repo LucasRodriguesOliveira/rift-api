@@ -5,6 +5,13 @@ type Query {
   userTypeList: [UserType]
 }
 
+type Mutation {
+  registerUserType(description: String): UserType!
+  updateUserTypeDescription(id: ID!, description: String): UserType
+  updateUserTypeIsActive(id: ID!, isActive: Boolean): UserType
+  removeUserType(id: ID!): Boolean!
+}
+
 type UserType {
   id: ID!
   description: String
@@ -12,5 +19,4 @@ type UserType {
   updatedAt: Date
   isActive: Boolean
   isExcluded: Boolean
-  teste: Boolean
 }

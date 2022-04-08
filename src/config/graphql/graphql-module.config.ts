@@ -10,9 +10,13 @@ export const graphQLAsyncOptions: GqlModuleAsyncOptions<
   driver: ApolloDriver,
   inject: [ConfigService],
   useFactory: async (configService: ConfigService) => {
-    const config = configService.get<GraphQLConfig>('graphql');
-    console.log(config);
+    const {
+      debug,
+      definitions: { path },
+      playground,
+      typePaths,
+    } = configService.get<GraphQLConfig>('graphql');
 
-    return config;
+    return { debug, playground, typePaths, definitions: { path } };
   },
 };
