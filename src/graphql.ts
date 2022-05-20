@@ -9,7 +9,7 @@
 /* eslint-disable */
 export interface IQuery {
     userType(id: string): Nullable<UserType> | Promise<Nullable<UserType>>;
-    userTypeList(): Nullable<Nullable<UserType>[]> | Promise<Nullable<Nullable<UserType>[]>>;
+    userTypeList(showInactive?: Nullable<boolean>): Nullable<Nullable<UserType>[]> | Promise<Nullable<Nullable<UserType>[]>>;
 }
 
 export interface IMutation {

@@ -1,5 +1,5 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { UserType } from './entity/user-type.entity';
+import { UserType } from './model/user-type.model';
 import { UserTypeService } from './user-type.service';
 
 @Resolver('UserType')
@@ -12,8 +12,10 @@ export class UserTypeResolver {
   }
 
   @Query('userTypeList')
-  async getUserTypeList(): Promise<UserType[]> {
-    return this.userTypeService.list();
+  async getUserTypeList(
+    @Args('showInactive') showInactive: boolean,
+  ): Promise<UserType[]> {
+    return this.userTypeService.list(showInactive);
   }
 
   @Mutation('registerUserType')

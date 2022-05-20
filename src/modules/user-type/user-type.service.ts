@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { UserType, UserTypeDocument } from './entity/user-type.entity';
+import { UserType, UserTypeDocument } from './model/user-type.model';
 
 @Injectable()
 export class UserTypeService {
@@ -11,17 +11,18 @@ export class UserTypeService {
   ) {}
 
   async create(description: string): Promise<UserType> {
-    const userType = new this.userTypeModel({ description });
-
-    return userType.save();
+    return this.userTypeModel.create({ description });
   }
 
   async find(id: string): Promise<UserType> {
     return this.userTypeModel.findById(id);
   }
 
-  async list(): Promise<UserType[]> {
-    return this.userTypeModel.find({});
+  async list(showInactive: boolean): Promise<UserType[]> {
+    return this.userTypeModel.find({
+      isExcluded: false,
+      ...(showInactive ? {} : { isActive: true }),
+    });
   }
 
   async updateDescription(id: string, description: string): Promise<UserType> {
@@ -37,11 +38,13 @@ export class UserTypeService {
   }
 
   async delete(id: string): Promise<boolean> {
-    const { modifiedCount } = await this.userTypeModel.updateOne(
+    await this.userTypeModel.updateOne(
       { _id: id },
       { $set: { isExcluded: true } },
     );
 
-    return !!modifiedCount;
+    const { isExcluded } = await this.userTypeModel.findById(id, 'isExcluded');
+
+    return isExcluded;
   }
 }
