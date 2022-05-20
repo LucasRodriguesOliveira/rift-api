@@ -1,0 +1,20 @@
+type Query {
+  module(id: ID!): Module
+  moduleList(showInactive: Boolean): [Module]
+}
+
+type Mutation {
+  registerModule(description: String!): Module
+  updateModuleDescription(id: ID!, description: String!): Module
+  updateModuleStatus(id: ID!, isActive: Boolean!): Module
+  removeModule(id: ID!): Boolean
+}
+
+type Module {
+  id: ID!
+  description: String
+  createdAt: Date
+  updatedAt: Date
+  isActive: Boolean
+  isExcluded: Boolean
+}
