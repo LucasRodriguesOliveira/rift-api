@@ -6,10 +6,10 @@ type Query {
 }
 
 type Mutation {
-  registerUserType(description: String): UserType!
+  registerUserType(description: String!): UserType
   updateUserTypeDescription(id: ID!, description: String): UserType
   updateUserTypeIsActive(id: ID!, isActive: Boolean): UserType
-  removeUserType(id: ID!): Boolean!
+  removeUserType(id: ID!): Boolean
 }
 
 type UserType {
