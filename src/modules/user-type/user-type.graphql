@@ -1,0 +1,22 @@
+scalar Date
+
+type Query {
+  userType(id: ID!): UserType
+  userTypeList(showInactive: Boolean): [UserType]
+}
+
+type Mutation {
+  registerUserType(description: String!): UserType
+  updateUserTypeDescription(id: ID!, description: String): UserType
+  updateUserTypeIsActive(id: ID!, isActive: Boolean): UserType
+  removeUserType(id: ID!): Boolean
+}
+
+type UserType {
+  id: ID!
+  description: String
+  createdAt: Date
+  updatedAt: Date
+  isActive: Boolean
+  isExcluded: Boolean
+}
