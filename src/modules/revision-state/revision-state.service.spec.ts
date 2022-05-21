@@ -59,7 +59,7 @@ describe(RevisionState.name, function () {
     });
   });
 
-  describe('Create new User Type', function () {
+  describe('Create new Revision State', function () {
     const revisionStateMockResult: RevisionState = {
       description: 'Test',
       createdAt: new Date(),
@@ -82,7 +82,7 @@ describe(RevisionState.name, function () {
     });
   });
 
-  describe('List User Token Types', function () {
+  describe('List Revision State', function () {
     const revisionStateActiveList: RevisionState[] = [
       {
         description: 'Test - 1',
@@ -136,7 +136,7 @@ describe(RevisionState.name, function () {
     });
   });
 
-  describe('Update a existing user token type', function () {
+  describe('Update a existing revision state', function () {
     const revisionStateMockResultDescriptionUpdated: RevisionState = {
       description: 'Test - updated',
       createdAt: new Date(),
