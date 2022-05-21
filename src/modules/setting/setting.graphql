@@ -1,0 +1,20 @@
+type Query {
+  setting(id: ID!): Setting
+  settingList(showInactive: Boolean!): [Setting]
+}
+
+type Mutation {
+  registerSetting(description: String!): Setting
+  updateSettingDescription(id: ID!, description: String!): Setting
+  updateSettingStatus(id: ID!, isActive: Boolean!): Setting
+  removeSetting(id: ID!): Boolean
+}
+
+type Setting {
+  id: ID!
+  description: String!
+  createdAt: Date!
+  updatedAt: Date!
+  isActive: Boolean!
+  isExcluded: Boolean!
+}

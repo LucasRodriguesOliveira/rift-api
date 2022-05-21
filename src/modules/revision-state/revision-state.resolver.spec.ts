@@ -10,7 +10,7 @@ import { RevisionStateService } from './revision-state.service';
 
 jest.mock('mongoose');
 
-describe(RevisionState.name, function () {
+describe(RevisionStateResolver.name, function () {
   let revisionStateResolver: RevisionStateResolver;
   let revisionStateService: RevisionStateService;
   let revisionStateModel: jest.Mocked<Model<RevisionStateDocument>>;
