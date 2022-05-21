@@ -1,0 +1,20 @@
+type Query {
+  revisionState(id: ID!): RevisionState
+  revisionStateList(showInactive: Boolean!): [RevisionState]
+}
+
+type Mutation {
+  registerRevisionState(description: String!): RevisionState
+  updateRevisionStateDescription(id: ID!, description: String!): RevisionState
+  updateRevisionStateStatus(id: ID!, isActive: Boolean!): RevisionState
+  removeRevisionState(id: ID!): Boolean
+}
+
+type RevisionState {
+  id: ID!
+  description: String!
+  createdAt: Date!
+  updatedAt: Date!
+  isActive: Boolean!
+  isExcluded: Boolean!
+}
