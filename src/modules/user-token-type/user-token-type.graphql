@@ -1,0 +1,20 @@
+type Query {
+  userTokenType(id: ID!): UserTokenType
+  userTokenTypeList(showInactive: Boolean!): [UserTokenType]
+}
+
+type Mutation {
+  registerUserTokenType(description: String!): UserTokenType
+  updateUserTokenTypeDescription(id: ID!, description: String!): UserTokenType
+  updateUserTokenTypeStatus(id: ID!, isActive: Boolean!): UserTokenType
+  removeUserTokenType(id: ID!): Boolean
+}
+
+type UserTokenType {
+  id: ID!
+  description: String!
+  createdAt: Date!
+  updatedAt: Date!
+  isActive: Boolean!
+  isExcluded: Boolean!
+}
