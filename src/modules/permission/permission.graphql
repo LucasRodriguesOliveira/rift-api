@@ -1,0 +1,20 @@
+type Query {
+  permission(id: ID!): Permission
+  permissionList(showInactive: Boolean!): [Permission]
+}
+
+type Mutation {
+  registerPermission(description: String!): Permission
+  updatePermissionDescription(id: ID!, description: String!): Permission
+  updatePermissionStatus(id: ID!, isActive: Boolean!): Permission
+  removePermission(id: ID!): Boolean
+}
+
+type Permission {
+  id: ID
+  description: String
+  createdAt: Date
+  updatedAt: Date
+  isActive: Boolean
+  isExcluded: Boolean
+}
