@@ -5,6 +5,7 @@ import { GQLModule } from './modules/graphql/graphql.module';
 import { ModuleModule } from './modules/module/module.module';
 import { MongodbModule } from './modules/mongoose/mongoose.module';
 import { PermissionModule } from './modules/permission/permission.module';
+import { UserTokenTypeModule } from './modules/user-token-type/user-token-type.module';
 import { UserTypeModule } from './modules/user-type/user-type.module';
 
 @Module({
@@ -15,6 +16,7 @@ import { UserTypeModule } from './modules/user-type/user-type.module';
     UserTypeModule,
     ModuleModule,
     PermissionModule,
+    UserTokenTypeModule,
   ],
 })
 export class AppModule {}
