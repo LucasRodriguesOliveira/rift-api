@@ -58,7 +58,7 @@ describe(ModuleResolver.name, function () {
     });
   });
 
-  describe('Create new User Type', function () {
+  describe('Create new Module', function () {
     const moduleMockResult: Module = {
       description: 'Test',
       createdAt: new Date(),
@@ -79,7 +79,7 @@ describe(ModuleResolver.name, function () {
     });
   });
 
-  describe('List User Types', function () {
+  describe('List Module', function () {
     const moduleActiveList: Module[] = [
       {
         description: 'Test - 1',
@@ -133,7 +133,7 @@ describe(ModuleResolver.name, function () {
     });
   });
 
-  describe('Update a existing user type', function () {
+  describe('Update a existing module', function () {
     const moduleMockResultDescriptionUpdated: Module = {
       description: 'Test - updated',
       createdAt: new Date(),
