@@ -1,0 +1,49 @@
+input ListFilterOptionsInput {
+  showInactive: Boolean!
+}
+
+input ListFilterInput {
+  typeId: String
+  permissionId: String
+  moduleId: String
+  options: ListFilterOptionsInput!
+}
+
+input CreatePermissionGroupInput {
+  typeId: String!
+  permissionId: String!
+  moduleId: String!
+}
+
+input UpdatePermissionGroupInput {
+  typeId: String
+  permissionId: String
+  moduleId: String
+}
+
+input UpdatePermissionGroupStatusInput {
+  isActive: Boolean!
+}
+
+type Query {
+  permissionGroup(id: ID!): PermissionGroup
+  permissionGroupList(filters: ListFilterInput!): [PermissionGroup]
+}
+
+type Mutation {
+  registerPermissionGroup(dto: CreatePermissionGroupInput!): PermissionGroup
+  updatePermissionGroupRules(id: ID!, rules: UpdatePermissionGroupInput): PermissionGroup
+  updatePermissionGroupStatus(id: ID!, status: UpdatePermissionGroupStatusInput): PermissionGroup
+  removePermissionGroup(id: ID!): Boolean
+}
+
+type PermissionGroup {
+  id: ID!
+  typeId: String!
+  permissionId: String!
+  moduleId: String!
+  createdAt: Date!
+  updatedAt: Date!
+  isActive: Boolean!
+  isExcluded: Boolean!
+}
