@@ -1,0 +1,29 @@
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+  typeId: String!
+}
+
+input UserListInput {
+  name: String
+  typeId: String
+}
+
+type Query {
+  user(id: ID!): User
+  userList(filters: UserListInput): [User]
+}
+
+type Mutation {
+  registerUser(data: CreateUserInput!): User
+  updateUserName(id: ID!, newName: String): User
+  removeUser(id: ID!): Boolean
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  typeId: String!
+}
