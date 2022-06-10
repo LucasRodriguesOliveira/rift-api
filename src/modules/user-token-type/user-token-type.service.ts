@@ -5,6 +5,8 @@ import {
   UserTokenType,
   UserTokenTypeDocument,
 } from './model/user-token-type.model';
+import { CreateUserTokenTypeDto } from './dto/create-user-token-type.dto';
+import { UserTokenTypeDuration } from './user-token-type.enum';
 
 @Injectable()
 export class UserTokenTypeService {
@@ -13,8 +15,10 @@ export class UserTokenTypeService {
     private readonly userTokenTypeModel: Model<UserTokenTypeDocument>,
   ) {}
 
-  public async create(description: string): Promise<UserTokenType> {
-    return this.userTokenTypeModel.create({ description });
+  public async create(
+    createUserTokenTypeDto: CreateUserTokenTypeDto,
+  ): Promise<UserTokenType> {
+    return this.userTokenTypeModel.create(createUserTokenTypeDto);
   }
 
   public async find(id: string): Promise<UserTokenType> {
@@ -47,6 +51,18 @@ export class UserTokenTypeService {
     await this.userTokenTypeModel.updateOne(
       { _id: id },
       { $set: { isActive } },
+    );
+
+    return this.userTokenTypeModel.findById(id);
+  }
+
+  public async updateDuration(
+    id: string,
+    duration: UserTokenTypeDuration,
+  ): Promise<UserTokenType> {
+    await this.userTokenTypeModel.updateOne(
+      { _id: id },
+      { $set: { duration } },
     );
 
     return this.userTokenTypeModel.findById(id);

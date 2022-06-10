@@ -1,5 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { UserTokenType } from './model/user-token-type.model';
+import { UserTokenTypeDuration } from './user-token-type.enum';
 import { UserTokenTypeService } from './user-token-type.service';
 
 @Resolver('UserTokenType')
@@ -21,8 +22,9 @@ export class UserTokenTypeResolver {
   @Mutation('registerUserTokenType')
   public async create(
     @Args('description') description: string,
+    @Args('duration') duration: UserTokenTypeDuration,
   ): Promise<UserTokenType> {
-    return this.userTokenTypeService.create(description);
+    return this.userTokenTypeService.create({ description, duration });
   }
 
   @Mutation('updateUserTokenTypeDescription')
@@ -39,6 +41,14 @@ export class UserTokenTypeResolver {
     @Args('isActive') isActive: boolean,
   ): Promise<UserTokenType> {
     return this.userTokenTypeService.updateStatus(id, isActive);
+  }
+
+  @Mutation('updateUserTokenTypeDuration')
+  public async updateDuration(
+    @Args('id') id: string,
+    @Args('duration') duration: UserTokenTypeDuration,
+  ): Promise<UserTokenType> {
+    return this.userTokenTypeService.updateDuration(id, duration);
   }
 
   @Mutation('removeUserTokenType')

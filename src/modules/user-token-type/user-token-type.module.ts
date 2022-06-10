@@ -7,5 +7,6 @@ import { UserTokenTypeService } from './user-token-type.service';
 @Module({
   imports: [MongooseModule.forFeature(definitions)],
   providers: [UserTokenTypeService, UserTokenTypeResolver],
+  exports: [UserTokenTypeService],
 })
 export class UserTokenTypeModule {}

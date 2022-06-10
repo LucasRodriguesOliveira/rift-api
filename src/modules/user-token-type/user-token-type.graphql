@@ -1,12 +1,26 @@
+enum Duration {
+  ONE_DAY
+  TWO_DAYS
+  THREE_DAYS
+  FOUR_DAYS
+  FIVE_DAYS
+  SIX_DAYS
+  ONE_WEEK
+  FORTNIGHT
+  THREE_WEEKS
+  ONE_MONTH
+}
+
 type Query {
   userTokenType(id: ID!): UserTokenType
   userTokenTypeList(showInactive: Boolean!): [UserTokenType]
 }
 
 type Mutation {
-  registerUserTokenType(description: String!): UserTokenType
+  registerUserTokenType(description: String!, duration: Duration!): UserTokenType
   updateUserTokenTypeDescription(id: ID!, description: String!): UserTokenType
   updateUserTokenTypeStatus(id: ID!, isActive: Boolean!): UserTokenType
+  updateUserTokenTypeDuration(id: ID!, duration: Duration!): UserTokenType
   removeUserTokenType(id: ID!): Boolean
 }
 

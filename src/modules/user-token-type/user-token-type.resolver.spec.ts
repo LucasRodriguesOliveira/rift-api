@@ -5,6 +5,7 @@ import {
   UserTokenType,
   UserTokenTypeDocument,
 } from './model/user-token-type.model';
+import { UserTokenTypeDuration } from './user-token-type.enum';
 import { UserTokenTypeResolver } from './user-token-type.resolver';
 import { UserTokenTypeService } from './user-token-type.service';
 
@@ -50,6 +51,7 @@ describe(UserTokenTypeResolver.name, function () {
       updatedAt: new Date(),
       isActive: true,
       isExcluded: false,
+      duration: UserTokenTypeDuration.FIVE_DAYS,
     };
 
     const idToSearch = '1';
@@ -73,16 +75,21 @@ describe(UserTokenTypeResolver.name, function () {
       updatedAt: new Date(),
       isActive: true,
       isExcluded: false,
+      duration: UserTokenTypeDuration.FIVE_DAYS,
     };
 
     const descriptionToCreate = 'Test';
+    const durationToCreate = UserTokenTypeDuration.FIVE_DAYS;
 
     it('should create successfully a userTokenType', async () => {
       userTokenTypeModel.create.mockImplementation(
         () => userTokenTypeMockResult,
       );
 
-      const result = await userTokenTypeResolver.create(descriptionToCreate);
+      const result = await userTokenTypeResolver.create(
+        descriptionToCreate,
+        durationToCreate,
+      );
 
       expect(userTokenTypeModel.create).toHaveBeenCalled();
       expect(result).toBe(userTokenTypeMockResult);
@@ -97,6 +104,7 @@ describe(UserTokenTypeResolver.name, function () {
         updatedAt: new Date(),
         isActive: true,
         isExcluded: false,
+        duration: UserTokenTypeDuration.FIVE_DAYS,
       },
       {
         description: 'Test - 3',
@@ -104,6 +112,7 @@ describe(UserTokenTypeResolver.name, function () {
         updatedAt: new Date(),
         isActive: true,
         isExcluded: false,
+        duration: UserTokenTypeDuration.FIVE_DAYS,
       },
     ];
     const userTokenTypeAllStatusList: UserTokenType[] = [
@@ -114,6 +123,7 @@ describe(UserTokenTypeResolver.name, function () {
         updatedAt: new Date(),
         isActive: false,
         isExcluded: false,
+        duration: UserTokenTypeDuration.FIVE_DAYS,
       },
       {
         description: 'Test - 4',
@@ -121,6 +131,7 @@ describe(UserTokenTypeResolver.name, function () {
         updatedAt: new Date(),
         isActive: false,
         isExcluded: false,
+        duration: UserTokenTypeDuration.FIVE_DAYS,
       },
     ];
 
@@ -150,6 +161,7 @@ describe(UserTokenTypeResolver.name, function () {
       updatedAt: new Date(),
       isActive: true,
       isExcluded: false,
+      duration: UserTokenTypeDuration.FIVE_DAYS,
     };
     const userTokenTypeMockResultStatusUpdated: UserTokenType = {
       description: 'Test',
@@ -157,11 +169,21 @@ describe(UserTokenTypeResolver.name, function () {
       updatedAt: new Date(),
       isActive: false,
       isExcluded: false,
+      duration: UserTokenTypeDuration.FIVE_DAYS,
+    };
+    const userTokenTypeMockResultDurationUpdated: UserTokenType = {
+      description: 'Test',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      isActive: false,
+      isExcluded: false,
+      duration: UserTokenTypeDuration.FOUR_DAYS,
     };
 
     const idToUpdate = '1';
     const newDescription = 'Test - updated';
     const newStatus = false;
+    const newDuration = UserTokenTypeDuration.FOUR_DAYS;
 
     it('should update successfully a userTokenType description and return the new userTokenType', async () => {
       userTokenTypeModel.findById.mockResolvedValueOnce(
@@ -193,6 +215,22 @@ describe(UserTokenTypeResolver.name, function () {
         idToUpdate,
       );
       expect(result).toBe(userTokenTypeMockResultStatusUpdated);
+    });
+
+    it('should update successfully a userTokenType duration and return the new userTokenType', async () => {
+      userTokenTypeModel.findById.mockResolvedValueOnce(
+        userTokenTypeMockResultDurationUpdated,
+      );
+
+      const result = await userTokenTypeResolver.updateDuration(
+        idToUpdate,
+        newDuration,
+      );
+
+      expect(userTokenTypeModel.findById).toHaveBeenCalledWith<string[]>(
+        idToUpdate,
+      );
+      expect(result).toBe(userTokenTypeMockResultDurationUpdated);
     });
   });
 

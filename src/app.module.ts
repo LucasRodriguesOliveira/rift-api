@@ -8,6 +8,7 @@ import { PermissionGroupModule } from './modules/permission-group/permission-gro
 import { PermissionModule } from './modules/permission/permission.module';
 import { RevisionStateModule } from './modules/revision-state/revision-state.module';
 import { UserTokenTypeModule } from './modules/user-token-type/user-token-type.module';
+import { UserToken } from './modules/user-token/model/user-token.model';
 import { UserTypeModule } from './modules/user-type/user-type.module';
 import { UserModule } from './modules/user/user.module';
 
@@ -23,6 +24,7 @@ import { UserModule } from './modules/user/user.module';
     RevisionStateModule,
     PermissionGroupModule,
     UserModule,
+    UserToken,
   ],
 })
 export class AppModule {}
